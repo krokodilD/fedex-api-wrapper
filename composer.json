@@ -1,0 +1,29 @@
+{
+    "name": "daniilkrok/fedex-rest-api-wrapper",
+    "description": "Wrapper for FedEx new API, with use REST API calls",
+    "license": "MIT",
+    "keywords": [
+        "fedex",
+        "api",
+        "rest",
+        "rest api",
+        "wrapper"
+    ],
+    "authors": [
+        {
+            "name": "Daniil Krok",
+            "email": "krokodild@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FedExRestApi\\": "src"
+        }
+    }
+}
