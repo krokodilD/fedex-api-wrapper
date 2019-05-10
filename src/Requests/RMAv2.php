@@ -10,6 +10,7 @@ class RMAv2 extends FedEx
 
     public function __construct(
         $authData,
+        $timeout = null,
         $mode = 'live'
     ) {
         if ($authData['token_type'] == 'bearer') {
@@ -22,6 +23,9 @@ class RMAv2 extends FedEx
             "content-type"      => "application/json",
             "authorization"     => "{$tokenType} {$authData['access_token']}"
         ]);
+
+        if (is_int($timeout)) $this->setTimeout($timeout);
+
         parent::__construct($mode);
     }
 

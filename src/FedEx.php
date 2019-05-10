@@ -6,6 +6,7 @@ class FedEx
 {
     private $sandbox = false;
     private $restURL;
+    private $timeout = 30;
     private $reqData = [];
     private $reqHeaders = [];
     private $headers = [];
@@ -53,6 +54,11 @@ class FedEx
         $this->grant_type = $scope;
     }
 
+    public function setTimeout($milliseconds)
+    {
+        $this->timeout = $milliseconds;
+    }
+
     public function jsonToArray($data)
     {
         return json_decode($data, true);
@@ -94,7 +100,7 @@ class FedEx
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
+            CURLOPT_TIMEOUT => $this->timeout,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => $this->method,
             CURLOPT_HTTPHEADER => $this->reqHeaders,
