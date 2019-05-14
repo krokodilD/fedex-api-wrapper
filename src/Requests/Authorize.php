@@ -10,7 +10,7 @@ class Authorize extends FedEx
     private $password;
     private $grantType = 'password';
     private $scope = 'Fulfillment_Returns';
-    private $path = '/fsc/oauth2/token';
+    private $path = '/fsc/oauth2/authorize';
     private $orgName = 'orgName';
 
     public function __construct(

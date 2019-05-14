@@ -20,7 +20,7 @@ class FedEx
         if ($mode == 'sandbox')
             $this->sandbox = true;
 
-        $this->restURL = $this->sandbox ? 'https://api-sandbox.supplychain.fedex.com/api/sandbox' : 'https://api.supplychain.fedex.com/api';
+        $this->restURL = $this->sandbox ? 'https://api-sandbox.supplychain.fedex.com/api/sandbox' : 'https://connect.supplychain.fedex.com/api';
 
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
